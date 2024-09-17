@@ -72,6 +72,7 @@ export const Message = ({
                 toolInvocations[0]
               ) {
                 return (
+                  // @ts-ignore
                   <ReasoningStep step={toolInvocations[0].result} key={i} />
                 );
               }
