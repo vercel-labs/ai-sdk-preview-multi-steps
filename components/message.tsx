@@ -6,8 +6,6 @@ import { ReactNode } from "react";
 import { StreamableValue, useStreamableValue } from "ai/rsc";
 import { Markdown } from "./markdown";
 import { Message as TMessage, ToolInvocation } from "ai";
-import { Orders } from "./orders";
-import { Tracker } from "./tracker";
 import { ReasoningStep } from "./reasoning-step";
 
 export const TextStreamMessage = ({
