@@ -22,7 +22,7 @@ yarn create next-app --example https://github.com/vercel-labs/ai-sdk-preview-ste
 pnpm create next-app --example https://github.com/vercel-labs/ai-sdk-preview-steps-reasoning ai-sdk-preview-steps-reasoning-example
 ```
 
-To run this example locally you need to:
+To run the example locally you need to:
 
 1. Sign up for accounts with the AI providers you want to use (e.g., OpenAI, Anthropic).
 2. Obtain API keys for each provider.
