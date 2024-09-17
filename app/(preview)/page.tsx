@@ -9,7 +9,8 @@ import Link from "next/link";
 import { useChat } from "ai/react";
 
 export default function Home() {
-  const { messages, handleSubmit, input, setInput, append } = useChat();
+  const { messages, handleSubmit, input, setInput, append, isLoading } =
+    useChat();
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [messagesContainerRef, messagesEndRef] =
@@ -39,8 +40,22 @@ export default function Home() {
                   <MasonryIcon />
                 </p>
                 <p className="text-center">
-                  multi-step generations with gpt 4o-mini and the{" "}
-                  <Link className="text-blue-500 dark:text-blue-400" href="https://sdk.vercel.ai">AI SDK</Link>
+                  Multi-step generations with Llama 3.1 70b (
+                  <Link
+                    className="text-blue-500 dark:text-blue-400"
+                    href="https://groq.com"
+                    target="_blank"
+                  >
+                    Groq
+                  </Link>
+                  ) and the{" "}
+                  <Link
+                    className="text-blue-500 dark:text-blue-400"
+                    href="https://sdk.vercel.ai"
+                    target="_blank"
+                  >
+                    AI SDK
+                  </Link>
                 </p>
               </div>
             </motion.div>
@@ -94,7 +109,8 @@ export default function Home() {
         >
           <input
             ref={inputRef}
-            className="bg-zinc-100 rounded-md px-2 py-1.5 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
+            disabled={isLoading}
+            className="bg-zinc-100 disabled:opacity-50 rounded-md px-2 py-1.5 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
             placeholder="Send a message..."
             value={input}
             onChange={(event) => {

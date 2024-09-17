@@ -1,6 +1,11 @@
-import { openai } from "@ai-sdk/openai";
+import { openai, createOpenAI as createGroq } from "@ai-sdk/openai";
 import { convertToCoreMessages, streamText } from "ai";
 import { z } from "zod";
+
+const groq = createGroq({
+  apiKey: process.env.GROQ_API_KEY,
+  baseUrl: "https://api.groq.com/openai/v1",
+});
 
 export async function POST(request: Request) {
   const { messages } = await request.json();
@@ -8,7 +13,8 @@ export async function POST(request: Request) {
   const systemMessage = `You are an expert AI assistant that explains your reasoning step by step. For each step, provide a title that describes what you're doing in that step, along with the content. Decide if you need another step or if you're ready to give the final answer. USE AS MANY REASONING STEPS AS POSSIBLE. AT LEAST 3. BE AWARE OF YOUR LIMITATIONS AS AN LLM AND WHAT YOU CAN AND CANNOT DO. IN YOUR REASONING, INCLUDE EXPLORATION OF ALTERNATIVE ANSWERS. CONSIDER YOU MAY BE WRONG, AND IF YOU ARE WRONG IN YOUR REASONING, WHERE IT WOULD BE. FULLY TEST ALL OTHER POSSIBILITIES. YOU CAN BE WRONG. WHEN YOU SAY YOU ARE RE-EXAMINING, ACTUALLY RE-EXAMINE, AND USE ANOTHER APPROACH TO DO SO. DO NOT JUST SAY YOU ARE RE-EXAMINING. USE AT LEAST 4 METHODS TO DERIVE THE ANSWER. USE BEST PRACTICES. Use the addReasoningStep function for each step of your reasoning.`;
 
   const result = await streamText({
-    model: openai("gpt-4o-mini"),
+    // model: openai("gpt-4o-mini"),
+    model: groq("llama-3.1-70b-versatile"),
     system: systemMessage,
     messages: convertToCoreMessages(messages),
     maxSteps: 10,
