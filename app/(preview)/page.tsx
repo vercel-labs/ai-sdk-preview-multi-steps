@@ -39,23 +39,14 @@ export default function Home() {
                   <MasonryIcon />
                 </p>
                 <p className="text-center">
-                  multi-step generations with gpt 4o-mini
+                  multi-step generations with gpt 4o-mini and the{" "}
+                  <Link className="text-blue-500 dark:text-blue-400" href="https://sdk.vercel.ai">AI SDK</Link>
                 </p>
               </div>
             </motion.div>
           )}
 
           {messages.map((message, i) => {
-            // if (message.toolInvocations) return null;
-            // const lastUserMessage = messages
-            //   .slice(0, i)
-            //   .filter((m) => m.role === "user")
-            //   .pop();
-            // const lastUserMessageIdx =
-            //   messages.indexOf(lastUserMessage) ?? undefined;
-            // const reasoningMessages = messages.slice(lastUserMessageIdx + 1, i);
-            // if (reasoningMessages.length === 0 && message.content) {
-            // }
             return (
               <Message
                 key={message.id}
@@ -129,7 +120,7 @@ export default function Home() {
 
         <Link
           target="_blank"
-          href="https://vercel.com/templates/next.js/steps-reasoning"
+          href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-preview-steps-reasoning&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key%20Needed&envLink=https%3A%2F%2Fplatform.openai.com"
           className="flex flex-row gap-2 items-center bg-zinc-900 px-2 py-1.5 rounded-md text-zinc-50 hover:bg-zinc-950 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-50"
         >
           <VercelIcon size={14} />
