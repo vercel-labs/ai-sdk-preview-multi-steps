@@ -40,3 +40,11 @@ body {
         text-wrap: balance;
     }
 }
+
+::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+/* Hide scrollbar for Firefox */
+html {
+    scrollbar-width: none; /* Firefox */
+}
