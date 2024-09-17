@@ -39,11 +39,13 @@ export const Message = ({
   content,
   toolInvocations,
   reasoningMessages,
+  queryPending
 }: {
   role: string;
   content: string | ReactNode;
   toolInvocations: Array<ToolInvocation> | undefined;
   reasoningMessages: Array<TMessage>;
+  queryPending: boolean;
 }) => {
   const usingTool = toolInvocations ?? false;
   const loading = content === "" && toolInvocations === undefined;

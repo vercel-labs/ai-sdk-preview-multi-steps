@@ -7,10 +7,16 @@ import { motion } from "framer-motion";
 import { GitIcon, MasonryIcon, VercelIcon } from "@/components/icons";
 import Link from "next/link";
 import { useChat } from "ai/react";
+import { toast } from "sonner";
 
 export default function Home() {
   const { messages, handleSubmit, input, setInput, append, isLoading } =
-    useChat();
+    useChat({
+      onError: () => {
+        toast.error("You've been rate limited, please try again later!");
+      },
+    });
+  const lastUserMessage = messages.filter((m) => m.role === "user").pop();
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [messagesContainerRef, messagesEndRef] =
@@ -69,6 +75,11 @@ export default function Home() {
                 content={message.content}
                 toolInvocations={message.toolInvocations}
                 reasoningMessages={[]}
+                queryPending={
+                  isLoading && lastUserMessage
+                    ? lastUserMessage.id === message.id
+                    : false
+                }
               ></Message>
             );
           })}
