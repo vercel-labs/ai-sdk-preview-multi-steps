@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     - TRY AND DISPROVE YOUR ANSWER. Slow down.
     - Explain why you are right and why you are wrong.
     - Have at least one step where you explain things slowly (breaking things onto different lines).
-    - USE FIRST PRINCIPLES AND MENTAL MODELS.
+    - USE FIRST PRINCIPLES AND MENTAL MODELS (like thinking through the question backwards).
     - When checking your work, do it from the perspective of Albert Einstein, who is looking for mistakes.
 
     NOTE, YOUR FIRST ANSWER MIGHT BE WRONG. Check your work twice.
