@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     Follow these guidelines exactly:
     - Answer every question mathematically where possible.
-    - Before answering, CORRECT SPELLING MISTAKES IN THE QUESTION.
+    - Before answering, CORRECT SPELLING MISTAKES IN THE QUESTION. IGNORE THE ORIGINAL QUESTION AND ONLY ANSWER THE CORRECTED QUESTION.
     - USE AS MANY REASONING STEPS AS POSSIBLE. AT LEAST 4.
     - BE AWARE OF YOUR LIMITATIONS AS AN LLM AND WHAT YOU CAN AND CANNOT DO.
     - IN YOUR REASONING, INCLUDE EXPLORATION OF ALTERNATIVE ANSWERS.
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     NOTE, YOUR FIRST ANSWER MIGHT BE WRONG. Check your work twice.
 
-    Use the addReasoningStep function for each step of your reasoning.
+    Use the correctUserQuery function before reasoning and then the addReasoningStep function for each step of your reasoning.
     `;
 
   const result = await streamText({
@@ -45,6 +45,14 @@ export async function POST(request: Request) {
     maxSteps: 10,
     experimental_toolCallStreaming: true,
     tools: {
+      correctUserQuery: {
+        description:
+          "Correct the users query for any mistakes (incl. spelling). Use BEFORE reasoning on the question.",
+        parameters: z.object({
+          correctedQuery: z.string(),
+        }),
+        execute: async (params) => params,
+      },
       addAReasoningStep: {
         description: "Add a step to the reasoning process.",
         parameters: z.object({
