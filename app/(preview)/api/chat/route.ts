@@ -15,6 +15,8 @@ export async function POST(request: Request) {
     For each step, provide a title that describes what you're doing in that step, along with the content. Decide if you need another step or if you're ready to give the final answer.
 
     Follow these guidelines exactly:
+    - Answer every question mathematically where possible.
+    - Before answering, CORRECT SPELLING MISTAKES IN THE QUESTION.
     - USE AS MANY REASONING STEPS AS POSSIBLE. AT LEAST 4.
     - BE AWARE OF YOUR LIMITATIONS AS AN LLM AND WHAT YOU CAN AND CANNOT DO.
     - IN YOUR REASONING, INCLUDE EXPLORATION OF ALTERNATIVE ANSWERS.
@@ -47,11 +49,15 @@ export async function POST(request: Request) {
         description: "Add a step to the reasoning process.",
         parameters: z.object({
           title: z.string().describe("The title of the reasoning step"),
-          content: z.string().describe("The content of the reasoning step. WRITE OUT ALL OF YOUR WORK. Where relevant, prove things mathematically."),
+          content: z
+            .string()
+            .describe(
+              "The content of the reasoning step. WRITE OUT ALL OF YOUR WORK. Where relevant, prove things mathematically."
+            ),
           nextStep: z
             .enum(["continue", "finalAnswer"])
             .describe(
-              "Whether to continue with another step or provide the final answer",
+              "Whether to continue with another step or provide the final answer"
             ),
         }),
         execute: async (params) => params,
