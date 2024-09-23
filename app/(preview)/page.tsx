@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Message } from "@/components/message";
 import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
 import { motion } from "framer-motion";
-import { MasonryIcon, VercelIcon } from "@/components/icons";
+import { GitIcon, MasonryIcon, VercelIcon } from "@/components/icons";
 import Link from "next/link";
 import { useChat } from "ai/react";
 
@@ -39,23 +39,28 @@ export default function Home() {
                   <MasonryIcon />
                 </p>
                 <p className="text-center">
-                  multi-step generations with gpt 4o-mini
+                  Multi-step generations with gpt-4o-mini (
+                  <Link
+                    className="text-blue-500 dark:text-blue-400"
+                    href="https://openai.com"
+                    target="_blank"
+                  >
+                    OpenAI
+                  </Link>
+                  ) and the{" "}
+                  <Link
+                    className="text-blue-500 dark:text-blue-400"
+                    href="https://sdk.vercel.ai"
+                    target="_blank"
+                  >
+                    AI SDK
+                  </Link>
                 </p>
               </div>
             </motion.div>
           )}
 
           {messages.map((message, i) => {
-            // if (message.toolInvocations) return null;
-            // const lastUserMessage = messages
-            //   .slice(0, i)
-            //   .filter((m) => m.role === "user")
-            //   .pop();
-            // const lastUserMessageIdx =
-            //   messages.indexOf(lastUserMessage) ?? undefined;
-            // const reasoningMessages = messages.slice(lastUserMessageIdx + 1, i);
-            // if (reasoningMessages.length === 0 && message.content) {
-            // }
             return (
               <Message
                 key={message.id}
