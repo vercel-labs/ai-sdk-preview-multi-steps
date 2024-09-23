@@ -46,13 +46,13 @@ export default function Home() {
                   <MasonryIcon />
                 </p>
                 <p className="text-center">
-                  Multi-step generations with Llama 3.1 70b (
+                  Multi-step generations with gpt-4o-mini (
                   <Link
                     className="text-blue-500 dark:text-blue-400"
-                    href="https://groq.com"
+                    href="https://openai.com"
                     target="_blank"
                   >
-                    Groq
+                    OpenAI
                   </Link>
                   ) and the{" "}
                   <Link

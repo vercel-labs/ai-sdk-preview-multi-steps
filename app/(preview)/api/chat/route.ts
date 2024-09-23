@@ -2,10 +2,10 @@ import { openai, createOpenAI as createGroq } from "@ai-sdk/openai";
 import { convertToCoreMessages, generateText, streamText, tool } from "ai";
 import { z } from "zod";
 
-const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY,
-  baseUrl: "https://api.groq.com/openai/v1",
-});
+// const groq = createGroq({
+//   apiKey: process.env.GROQ_API_KEY,
+//   baseUrl: "https://api.groq.com/openai/v1",
+// });
 
 export async function POST(request: Request) {
   const { messages } = await request.json();
@@ -38,8 +38,8 @@ export async function POST(request: Request) {
     `;
 
   const result = await streamText({
-    // model: openai("gpt-4o-mini"),
-    model: groq("llama-3.1-70b-versatile"),
+    model: openai("gpt-4o-mini"),
+    // model: groq("llama-3.1-70b-versatile"),
     system: systemMessage,
     messages: convertToCoreMessages(messages),
     maxSteps: 10,
