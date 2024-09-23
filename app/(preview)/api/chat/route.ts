@@ -1,5 +1,5 @@
 import { openai, createOpenAI as createGroq } from "@ai-sdk/openai";
-import { convertToCoreMessages, streamText } from "ai";
+import { convertToCoreMessages, generateText, streamText, tool } from "ai";
 import { z } from "zod";
 
 const groq = createGroq({
@@ -16,7 +16,6 @@ export async function POST(request: Request) {
 
     Follow these guidelines exactly:
     - Answer every question mathematically where possible.
-    - Before answering, CORRECT SPELLING MISTAKES IN THE QUESTION. IGNORE THE ORIGINAL QUESTION AND ONLY ANSWER THE CORRECTED QUESTION.
     - USE AS MANY REASONING STEPS AS POSSIBLE. AT LEAST 4.
     - BE AWARE OF YOUR LIMITATIONS AS AN LLM AND WHAT YOU CAN AND CANNOT DO.
     - IN YOUR REASONING, INCLUDE EXPLORATION OF ALTERNATIVE ANSWERS.
@@ -30,11 +29,12 @@ export async function POST(request: Request) {
     - Explain why you are right and why you are wrong.
     - Have at least one step where you explain things slowly (breaking things onto different lines).
     - USE FIRST PRINCIPLES AND MENTAL MODELS (like thinking through the question backwards).
+    - If you need to count letters, separate each letter by one dash on either side and identify it by the iterator.
     - When checking your work, do it from the perspective of Albert Einstein, who is looking for mistakes.
 
     NOTE, YOUR FIRST ANSWER MIGHT BE WRONG. Check your work twice.
 
-    Use the correctUserQuery function before reasoning and then the addReasoningStep function for each step of your reasoning.
+    Use the addReasoningStep function for each step of your reasoning.
     `;
 
   const result = await streamText({
@@ -45,14 +45,6 @@ export async function POST(request: Request) {
     maxSteps: 10,
     experimental_toolCallStreaming: true,
     tools: {
-      correctUserQuery: {
-        description:
-          "Correct the users query for any mistakes (incl. spelling). Use BEFORE reasoning on the question.",
-        parameters: z.object({
-          correctedQuery: z.string(),
-        }),
-        execute: async (params) => params,
-      },
       addAReasoningStep: {
         description: "Add a step to the reasoning process.",
         parameters: z.object({
@@ -60,16 +52,19 @@ export async function POST(request: Request) {
           content: z
             .string()
             .describe(
-              "The content of the reasoning step. WRITE OUT ALL OF YOUR WORK. Where relevant, prove things mathematically."
+              "The content of the reasoning step. WRITE OUT ALL OF YOUR WORK. Where relevant, prove things mathematically.",
             ),
           nextStep: z
             .enum(["continue", "finalAnswer"])
             .describe(
-              "Whether to continue with another step or provide the final answer"
+              "Whether to continue with another step or provide the final answer",
             ),
         }),
         execute: async (params) => params,
       },
+    },
+    onStepFinish: (step) => {
+      console.log(JSON.stringify(step, null, 2));
     },
   });
 
