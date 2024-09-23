@@ -63,9 +63,6 @@ export async function POST(request: Request) {
         execute: async (params) => params,
       },
     },
-    onStepFinish: (step) => {
-      console.log(JSON.stringify(step, null, 2));
-    },
   });
 
   return result.toDataStreamResponse();
