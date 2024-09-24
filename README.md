@@ -1,4 +1,4 @@
-# Steps and Reasoning Preview
+# Multi-Steps Preview
 
 This example demonstrates how to use the [AI SDK](https://sdk.vercel.ai/docs) with [Next.js](https://nextjs.org/) and the `streamText` function to automatically handle multi-step generations.
 
