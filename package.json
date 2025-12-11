@@ -16,7 +16,7 @@
     "d3-scale": "^4.0.2",
     "date-fns": "^4.0.0",
     "framer-motion": "^11.5.4",
-    "next": "14.2.11",
+    "next": "14.2.34",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
