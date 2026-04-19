@@ -1,13 +1,20 @@
-import { openai, createOpenAI as createGroq } from "@ai-sdk/openai";
+import { createOpenAI } from "@ai-sdk/openai";
+import { getVercelOidcToken } from "@vercel/functions/oidc";
 import { convertToCoreMessages, generateText, streamText, tool } from "ai";
+import { checkBotId } from "botid/server";
 import { z } from "zod";
 
-// const groq = createGroq({
-//   apiKey: process.env.GROQ_API_KEY,
-//   baseUrl: "https://api.groq.com/openai/v1",
-// });
-
 export async function POST(request: Request) {
+  const { isBot } = await checkBotId();
+  if (isBot) {
+    return new Response("Access denied", { status: 403 });
+  }
+
+  const openai = createOpenAI({
+    baseURL: "https://ai-gateway.vercel.sh/v1",
+    apiKey: await getVercelOidcToken(),
+  });
+
   const { messages } = await request.json();
 
   const systemMessage = `You are an expert AI assistant that explains your reasoning step by step.
