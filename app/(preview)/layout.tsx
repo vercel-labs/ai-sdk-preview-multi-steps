@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 const protectedRoutes = [
   {
-    path: "/",
+    path: "/api/chat",
     method: "POST",
   },
 ];
