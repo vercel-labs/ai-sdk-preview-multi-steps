@@ -13,13 +13,13 @@ importers:
         version: 1.0.10(zod@3.24.1)
       '@vercel/analytics':
         specifier: ^1.4.1
-        version: 1.4.1(next@15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(svelte@4.2.19)(vue@3.5.6(typescript@5.7.2))
+        version: 1.4.1(next@15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(svelte@4.2.19)(vue@3.5.6(typescript@5.7.2))
       '@vercel/kv':
         specifier: ^3.0.0
         version: 3.0.0
       ai:
         specifier: ^4.0.21
-        version: 4.0.21(react@19.0.0)(zod@3.24.1)
+        version: 4.0.21(react@19.2.5)(zod@3.24.1)
       d3-scale:
         specifier: ^4.0.2
         version: 4.0.2
@@ -28,25 +28,25 @@ importers:
         version: 4.1.0
       framer-motion:
         specifier: ^11.15.0
-        version: 11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 11.15.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next:
         specifier: ^15.1.9
-        version: 15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react:
-        specifier: ^19.0.0
-        version: 19.0.0
+        specifier: ^19.2.5
+        version: 19.2.5
       react-dom:
-        specifier: ^19.0.0
-        version: 19.0.0(react@19.0.0)
+        specifier: ^19.2.5
+        version: 19.2.5(react@19.2.5)
       react-use:
         specifier: ^17.6.0
-        version: 17.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 17.6.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       sonner:
         specifier: ^1.7.1
-        version: 1.7.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 1.7.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       streamdown:
         specifier: ^1.6.7
-        version: 1.6.7(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@19.0.0)(unified@11.0.5)
+        version: 1.6.7(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@19.2.5)(unified@11.0.5)
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
@@ -2444,10 +2444,10 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react-dom@19.0.0:
-    resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
+  react-dom@19.2.5:
+    resolution: {integrity: sha512-J5bAZz+DXMMwW/wV3xzKke59Af6CHY7G4uYLN1OvBcKEsWOs4pQExj86BBKamxl/Ik5bx9whOrvBlSDfWzgSag==}
     peerDependencies:
-      react: ^19.0.0
+      react: ^19.2.5
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -2464,8 +2464,8 @@ packages:
       react: '*'
       react-dom: '*'
 
-  react@19.0.0:
-    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
+  react@19.2.5:
+    resolution: {integrity: sha512-llUJLzz1zTUBrskt2pwZgLq59AemifIftw4aB7JxOqf1HY2FDaGDxgwpAPVzHU1kdWabH7FauP4i1oEeer2WCA==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -2588,8 +2588,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  scheduler@0.25.0:
-    resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
+  scheduler@0.27.0:
+    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
   screenfull@5.2.0:
     resolution: {integrity: sha512-9BakfsO2aUQN2K9Fdbj87RJIEZ82Q9IGim7FqM5OsebfoFC6ZHXgDq/KvniuLTPdeM8wY2o6Dj3WQ7KeQCj3cA==}
@@ -3056,14 +3056,14 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@1.0.6(react@19.0.0)(zod@3.24.1)':
+  '@ai-sdk/react@1.0.6(react@19.2.5)(zod@3.24.1)':
     dependencies:
       '@ai-sdk/provider-utils': 2.0.4(zod@3.24.1)
       '@ai-sdk/ui-utils': 1.0.5(zod@3.24.1)
-      swr: 2.2.5(react@19.0.0)
+      swr: 2.2.5(react@19.2.5)
       throttleit: 2.1.0
     optionalDependencies:
-      react: 19.0.0
+      react: 19.2.5
       zod: 3.24.1
 
   '@ai-sdk/ui-utils@1.0.5(zod@3.24.1)':
@@ -3671,10 +3671,10 @@ snapshots:
     dependencies:
       crypto-js: 4.2.0
 
-  '@vercel/analytics@1.4.1(next@15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(svelte@4.2.19)(vue@3.5.6(typescript@5.7.2))':
+  '@vercel/analytics@1.4.1(next@15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(svelte@4.2.19)(vue@3.5.6(typescript@5.7.2))':
     optionalDependencies:
-      next: 15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
+      next: 15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      react: 19.2.5
       svelte: 4.2.19
       vue: 3.5.6(typescript@5.7.2)
 
@@ -3755,17 +3755,17 @@ snapshots:
 
   acorn@8.15.0: {}
 
-  ai@4.0.21(react@19.0.0)(zod@3.24.1):
+  ai@4.0.21(react@19.2.5)(zod@3.24.1):
     dependencies:
       '@ai-sdk/provider': 1.0.2
       '@ai-sdk/provider-utils': 2.0.4(zod@3.24.1)
-      '@ai-sdk/react': 1.0.6(react@19.0.0)(zod@3.24.1)
+      '@ai-sdk/react': 1.0.6(react@19.2.5)(zod@3.24.1)
       '@ai-sdk/ui-utils': 1.0.5(zod@3.24.1)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
       zod-to-json-schema: 3.24.1(zod@3.24.1)
     optionalDependencies:
-      react: 19.0.0
+      react: 19.2.5
       zod: 3.24.1
 
   ajv@6.12.6:
@@ -4690,14 +4690,14 @@ snapshots:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
-  framer-motion@11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  framer-motion@11.15.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       motion-dom: 11.14.3
       motion-utils: 11.14.3
       tslib: 2.8.1
     optionalDependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
 
   fsevents@2.3.3:
     optional: true
@@ -5199,9 +5199,9 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-react@0.542.0(react@19.0.0):
+  lucide-react@0.542.0(react@19.2.5):
     dependencies:
-      react: 19.0.0
+      react: 19.2.5
 
   magic-string@0.30.17:
     dependencies:
@@ -5680,15 +5680,15 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  nano-css@5.6.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  nano-css@5.6.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
       css-tree: 1.1.3
       csstype: 3.1.3
       fastest-stable-stringify: 2.0.2
       inline-style-prefixer: 7.0.1
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
       rtl-css-js: 1.16.1
       stacktrace-js: 2.0.2
       stylis: 4.3.4
@@ -5697,15 +5697,15 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  next@15.5.7(@opentelemetry/api@1.9.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@next/env': 15.5.7
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001690
       postcss: 8.4.31
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      styled-jsx: 5.1.6(react@19.0.0)
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      styled-jsx: 5.1.6(react@19.2.5)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.5.7
       '@next/swc-darwin-x64': 15.5.7
@@ -5925,19 +5925,19 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-dom@19.0.0(react@19.0.0):
+  react-dom@19.2.5(react@19.2.5):
     dependencies:
-      react: 19.0.0
-      scheduler: 0.25.0
+      react: 19.2.5
+      scheduler: 0.27.0
 
   react-is@16.13.1: {}
 
-  react-universal-interface@0.6.2(react@19.0.0)(tslib@2.8.1):
+  react-universal-interface@0.6.2(react@19.2.5)(tslib@2.8.1):
     dependencies:
-      react: 19.0.0
+      react: 19.2.5
       tslib: 2.8.1
 
-  react-use@17.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-use@17.6.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@types/js-cookie': 2.2.7
       '@xobotyi/scrollbar-width': 1.9.5
@@ -5945,10 +5945,10 @@ snapshots:
       fast-deep-equal: 3.1.3
       fast-shallow-equal: 1.0.0
       js-cookie: 2.2.1
-      nano-css: 5.6.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      react-universal-interface: 0.6.2(react@19.0.0)(tslib@2.8.1)
+      nano-css: 5.6.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      react-universal-interface: 0.6.2(react@19.2.5)(tslib@2.8.1)
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
       set-harmonic-interval: 1.0.1
@@ -5956,7 +5956,7 @@ snapshots:
       ts-easing: 0.2.0
       tslib: 2.8.1
 
-  react@19.0.0: {}
+  react@19.2.5: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -6132,7 +6132,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  scheduler@0.25.0: {}
+  scheduler@0.27.0: {}
 
   screenfull@5.2.0: {}
 
@@ -6242,10 +6242,10 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  sonner@1.7.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  sonner@1.7.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
 
   source-map-js@1.2.1: {}
 
@@ -6274,17 +6274,17 @@ snapshots:
       stack-generator: 2.0.10
       stacktrace-gps: 3.1.2
 
-  streamdown@1.6.7(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@19.0.0)(unified@11.0.5):
+  streamdown@1.6.7(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@19.2.5)(unified@11.0.5):
     dependencies:
       clsx: 2.1.1
       hast: 1.0.0
       hast-util-to-jsx-runtime: 2.3.6
       html-url-attributes: 3.0.1
       katex: 0.16.25
-      lucide-react: 0.542.0(react@19.0.0)
+      lucide-react: 0.542.0(react@19.2.5)
       marked: 16.4.2
       mermaid: 11.12.1
-      react: 19.0.0
+      react: 19.2.5
       rehype-harden: 1.1.5
       rehype-katex: 7.0.1
       rehype-raw: 7.0.0
@@ -6391,10 +6391,10 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.7
 
-  styled-jsx@5.1.6(react@19.0.0):
+  styled-jsx@5.1.6(react@19.2.5):
     dependencies:
       client-only: 0.0.1
-      react: 19.0.0
+      react: 19.2.5
 
   stylis@4.3.4: {}
 
@@ -6434,11 +6434,11 @@ snapshots:
       periscopic: 3.1.0
     optional: true
 
-  swr@2.2.5(react@19.0.0):
+  swr@2.2.5(react@19.2.5):
     dependencies:
       client-only: 0.0.1
-      react: 19.0.0
-      use-sync-external-store: 1.4.0(react@19.0.0)
+      react: 19.2.5
+      use-sync-external-store: 1.4.0(react@19.2.5)
 
   tailwind-merge@3.4.0: {}
 
@@ -6615,9 +6615,9 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-sync-external-store@1.4.0(react@19.0.0):
+  use-sync-external-store@1.4.0(react@19.2.5):
     dependencies:
-      react: 19.0.0
+      react: 19.2.5
 
   util-deprecate@1.0.2: {}
 
